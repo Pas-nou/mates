@@ -1,5 +1,5 @@
 #navigation{
-    background: linear-gradient(0deg, #EF7A43 22.97%, #F9CA58 51.35%);
+    background: var(--background-yellow);
     width: 100dvw;
     height: 10dvh;
     position: fixed;

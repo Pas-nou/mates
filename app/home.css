@@ -1,0 +1,44 @@
+#homepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 97dvh;
+    max-width: 100dvw;
+}
+
+#title-homepage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 0 2em ;
+}
+
+#title-homepage {
+    font-family: var(--font-titles);
+    font-size: 42px;
+    text-align: center;
+}
+
+#button-container-homepage {
+    width: 90dvw;
+    background: var(--background-yellow);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#button-homepage {
+    text-decoration: none;
+    font-family: var(--font-minecraft);
+    font-size: 48px;
+    color: var(--black);
+}
+
+#button-container-homepage:hover {
+    transform: scale(1.08);
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
