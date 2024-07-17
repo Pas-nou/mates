@@ -16,7 +16,7 @@ export default function Home() {
           Fini de jouer solo !
         </p>
         <p id='title-homepage' >
-          Trouve ton pot de jeu sur mates
+          Trouve ton pote de jeu sur mates
         </p>
       </div>
       <div id="button-container-homepage">
