@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+/**
+ * Smooth scrolling on the whole document
+ */
+html {
+    /* scroll-behavior: smooth; */
+    font-size: 18px;
+}
+
+body * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*---------Variable collection--------*/
+:root {
+    /* Mode 1 */
+    /* colors */
+    --white: #ffffff;
+    --black: #000000;
+    --background-yellow: linear-gradient(0deg, #EF7A43 22.97%, #F9CA58 51.35%);
+    --blue: #518DA5;
+    --orange: #F1934B;
+    --pink: #E83A6F;
+    /* numbers */
+    /* --radius: 0.75rem;
+    --radius-big: 1.6rem;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700; */
+}
+/*-----------------------------------*/
+html {
+    background-color: var(--blue);
+}

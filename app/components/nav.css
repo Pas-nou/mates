@@ -1,0 +1,31 @@
+#navigation{
+    background: linear-gradient(0deg, #EF7A43 22.97%, #F9CA58 51.35%);
+    width: 100dvw;
+    height: 10dvh;
+    position: fixed;
+    bottom: 0;
+    border-radius: 5px 5px 0 0;
+}
+
+#navigation ul{
+    list-style: none;
+    display: flex;
+    position: relative;
+    bottom: 1.5em;
+    justify-content: space-around;
+}
+
+#navigation li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navigation a{
+    text-decoration: none;
+}
+
+#icone-controller{
+    position: relative;
+    bottom: 1.5em;
+}
