@@ -1,8 +1,38 @@
+import { PrismaClient } from '@prisma/client';
+import { NextResponse } from 'next/server';
+
 import Image from "next/image";
 
-import './configuration.css'
+import './config.css'
 
 export default function Configuration() {
+
+  async function GET() {
+    return NextResponse.json({ message: "Let's play!" })
+  }
+
+  async function POST(request: Request) {
+    try {
+      const prisma = new PrismaClient();
+
+      const { pseudo, avatar } = await request.json();
+
+      if (!pseudo) {
+        return NextResponse.json({ message: "Pseudo is required" }, { status: 400 });
+      }
+
+      const result = await prisma.user.create({
+        data: {
+          pseudo,
+          avatar,
+        }
+      })
+
+      return NextResponse.json({ message: "New user created with the id ${result.id}" })
+    } catch (err) {
+      return NextResponse.json({ error: err })
+    }
+  }
   return (
     <main id="configuration-page">
       <Image
@@ -44,7 +74,7 @@ export default function Configuration() {
         </select>
       </section>
       <div id="button-container-homepage">
-        <a href="/configuration" id='button-homepage'>Matchmaking</a>
+        <a type='submit' href="/configuration" id='button-homepage'>Matchmaking</a>
       </div>
     </main>
   );
