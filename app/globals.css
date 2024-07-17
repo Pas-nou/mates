@@ -22,6 +22,7 @@ body * {
     --black: #000000;
     --background-yellow: linear-gradient(0deg, #EF7A43 22.97%, #F9CA58 51.35%);
     --background-revert-yellow: linear-gradient(180deg, #EF7A43 22.97%, #F9CA58 51.35%);;
+    --background-input:rgba(255, 255, 255, 0.43);;
     --blue: #518DA5;
     --orange: #F1934B;
     --pink: #E83A6F;
