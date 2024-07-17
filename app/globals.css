@@ -4,7 +4,7 @@
  * Smooth scrolling on the whole document
  */
 html {
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
     font-size: 18px;
 }
 
@@ -21,6 +21,7 @@ body * {
     --white: #ffffff;
     --black: #000000;
     --background-yellow: linear-gradient(0deg, #EF7A43 22.97%, #F9CA58 51.35%);
+    --background-revert-yellow: linear-gradient(180deg, #EF7A43 22.97%, #F9CA58 51.35%);;
     --blue: #518DA5;
     --orange: #F1934B;
     --pink: #E83A6F;

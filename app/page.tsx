@@ -1,26 +1,27 @@
 import Image from "next/image";
 
-import styles from './page.module.css';
-import './page.module.css'
-
-import Nav from './components/nav'
+import './home.css'
 
 export default function Home() {
   return (
-    <main className={styles.homepage}>
+    <main id='homepage'>
       <Image
         src='/logo_mates.png'
-        width={400}
-        height={400}
+        width={300}
+        height={300}
         alt='Logo of Mates'
-        className={styles.logoHomeage}
       />
-      
-      <h1 className={styles.titlesHomepage} >
-        Je suis sur la page HOME
-      </h1>
-      <a href="/configuration" className={styles.buttonHomepage}>Coucou</a>
-    <Nav/>
+      <div id='title-homepage-container'>
+        <p id='title-homepage' >
+          Fini de jouer solo !
+        </p>
+        <p id='title-homepage' >
+          Trouve ton pot de jeu sur mates
+        </p>
+      </div>
+      <div id="button-container-homepage">
+        <a href="/configuration" id='button-homepage'>Start</a>
+      </div>
     </main>
   );
 }

@@ -14,13 +14,13 @@ const minecraftory = localFont({
 
 const headth = localFont({
   src: './fonts/Headth.ttf',
-  variable: '--font-titles',
+  variable: '--font-texts',
   display: 'swap',
 })
 
 const headoh = localFont({
   src: './fonts/Headoh.ttf',
-  variable: '--font-texts',
+  variable: '--font-titles',
   display: 'swap',
 })
 
