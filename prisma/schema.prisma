@@ -14,40 +14,48 @@ datasource db {
 }
 
 model User {
-  id        Int       @id @default(autoincrement())
-  pseudo    String    @db.VarChar(150)
-  avatar    String    @db.VarChar(150)
+  id        Int           @id @default(autoincrement())
+  pseudo    String        @unique
+  avatarId  Int?
+  avatar    Avatar?       @relation(fields: [avatarId], references: [id])
   games     User_Game[]
-  plateform User_Plateform[]
+  platforms User_Platform[]
 }
 
 model Game {
-  id        Int       @id @default(autoincrement())
-  name      String    @db.VarChar(150)
-  categorie String    @db.VarChar(150)
-  users     User_Game[]
+  id         Int        @id @default(autoincrement())
+  name       String     @db.VarChar(150)
+  categorie  String     @db.VarChar(150)
+  users      User_Game[]
 }
 
-model Plateform {
-  id        Int       @id @default(autoincrement())
-  name      String    @db.VarChar(150)
-  users     User_Plateform[]
+model Platform {
+  id        Int            @id @default(autoincrement())
+  name      String         @db.VarChar(150)
+  users     User_Platform[]
+}
+
+model Avatar {
+  id        Int     @id @default(autoincrement())
+  name      String
+  url       String
+  users     User[]
 }
 
 model User_Game {
   userId    Int
-  user      User      @relation(fields: [userId], references: [id])
   gameId    Int
+  user      User      @relation(fields: [userId], references: [id])
   game      Game      @relation(fields: [gameId], references: [id])
 
   @@id([userId, gameId])
 }
 
-model User_Plateform {
-  userId      Int
-  user        User      @relation(fields: [userId], references: [id])
-  plateformId Int
-  plateform   Plateform @relation(fields: [plateformId], references: [id])
+model User_Platform {
+  userId        Int
+  platformId    Int
+  user          User      @relation(fields: [userId], references: [id])
+  platform      Platform  @relation(fields: [platformId], references: [id])
 
-  @@id([userId, plateformId])
+  @@id([userId, platformId])
 }
