@@ -1,0 +1,42 @@
+#manette-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+#section-manette{
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#title-container-manette {
+    width: 90dvw;
+    height: 90px;
+    background: var(--background-yellow);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-manette{
+    font-family: var(--font-minecraft);
+    font-size: 30px;
+    color: var(--black);
+    text-align: center;
+}
+
+#manette-texts{
+    padding: 0 1em;
+    font-family: var(--font-texts);
+    text-align: center;
+}
+
+#button-manette-page{
+    text-align: center;
+}
