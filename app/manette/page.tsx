@@ -36,7 +36,7 @@ export default async function Manette() {
                     src='/logo_mates.png'
                     width={100}
                     height={100}
-                    alt='Logo of Mates'
+                    alt='Logo du site web Mates'
                 />
                 <header id="title-container-manette">
                     <h1 id="title-manette">`#!-_${lastUser.pseudo}\$^;`</h1>
