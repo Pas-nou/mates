@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Nav from "../components/nav";
 
+import BoomClient from "../components/BoomClient";
+
 import './boom.css'
+
+// * Déclaration des types
 
 interface User {
   id: number,
@@ -21,6 +25,8 @@ interface BoomProps {
   };
 }
 
+// * Récupération des users
+
 const getUser = async () => {
   const res = await fetch(`http://localhost:3000/api/user`, { cache: "no-store" });
   if (!res.ok) {
@@ -28,6 +34,8 @@ const getUser = async () => {
   }
   return res.json();
 };
+
+// * Récupération des avatars
 
 const getAvatar = async () => {
   const res = await fetch(`http://localhost:3000/api/avatar`, { cache: "no-store" });
@@ -37,7 +45,6 @@ const getAvatar = async () => {
   return res.json();
 };
 
-
 export default async function Boom({ user }: BoomProps) {
 
   const users = await getUser();
@@ -45,7 +52,6 @@ export default async function Boom({ user }: BoomProps) {
 
   const lastUser = users.findLast((user: User) => user.id !== null)
   const avatarUser = avatars.find((avatar: Avatar) => avatar.id === lastUser.avatarId)
-  console.log("Je suis l'avatar", avatarUser)
 
   return (
     <main id='boom-page'>
@@ -76,7 +82,10 @@ export default async function Boom({ user }: BoomProps) {
             ))}
           </ul>
         </section>
-        <p id="text-boom">PS: Ne cliques pas sur la les boutons en bas, ils sont juste là pour la décoration  :)</p>
+        <p id="text-boom">
+          PS: Ne cliques pas sur la les boutons en bas, ils sont juste là pour la décoration 😉<br />
+          Si jamais tu veux supprimer ton pseudo de la liste, cliques sur la manette <BoomClient userId={lastUser.id} />.
+        </p>
       </section>
       <Nav />
     </main>
