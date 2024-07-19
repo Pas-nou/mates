@@ -18,7 +18,7 @@ export default function Nav() {
                     </Link>
                 </li>
                 <li id="nav-heart">
-                    <Link href="/match" >
+                    <Link href="/boom" >
                         <Image
                             src='/nav-icones/icone_coeur.png'
                             width={50}
@@ -28,7 +28,7 @@ export default function Nav() {
                     </Link>
                 </li>
                 <li id="nav-controller">
-                    <Link href="/recherche" >
+                    <Link href="/manette" >
                         <Image
                             src='/nav-icones/icone_manette.png'
                             width={120}
@@ -39,7 +39,7 @@ export default function Nav() {
                     </Link>
                 </li>
                 <li id="nav-profil">
-                    <Link href="/user" >
+                    <Link href="/profil" >
                         <Image
                             src='/nav-icones/icone_profil.png'
                             width={50}

@@ -1,0 +1,47 @@
+#faq-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+#section-faq{
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#title-container-faq {
+    width: 90dvw;
+    height: 74px;
+    background: var(--background-yellow);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-faq{
+    font-family: var(--font-minecraft);
+    font-size: 38px;
+    color: var(--black);
+    text-align: center;
+}
+
+#article-faq{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#article-title {
+    font-family: var(--font-titles);
+    font-size: 18px;
+}
+
+#article-text{
+    font-family: var(--font-texts);
+}

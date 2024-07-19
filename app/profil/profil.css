@@ -1,0 +1,94 @@
+#configuration-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 97dvh;
+    max-width: 100dvw;
+    gap: 10px;
+}
+
+#input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 90dvw;
+}
+
+#pseudo{
+    font-family: var(--font-titles);
+    font-size: 24px;
+    height: 74px;
+    border: 2px solid #F9CA58;
+    border-radius: 5px;
+    background: var(--background-input);
+    padding-left: 10px;
+}
+
+#pseudo::placeholder{
+    color: var(--black);
+    font-size: 24px;
+}
+
+#avatar{
+    font-family: var(--font-titles);
+    height: 74px;
+    border: 2px solid #F9CA58;
+    border-radius: 5px;
+    background: var(--background-input);
+    font-size: 24px;
+}
+
+#platform{
+    font-family: var(--font-titles);
+    height: 74px;
+    border: 2px solid #F9CA58;
+    border-radius: 5px;
+    background: var(--background-input);
+    font-size: 24px;
+}
+
+#categorie{
+    font-family: var(--font-titles);
+    height: 74px;
+    border: 2px solid #F9CA58;
+    border-radius: 5px;
+    background: var(--background-input);
+    font-size: 24px;
+}
+
+#game{
+    font-family: var(--font-titles);
+    height: 74px;
+    background: var(--background-input);
+    border: 2px solid #F9CA58;
+    border-radius: 5px;
+    font-size: 24px;
+    display: flex;
+}
+
+#button-container-homepage {
+    width: 90dvw;
+    height: 74px;
+    background: var(--background-yellow);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#button-homepage {
+    text-decoration: none;
+    font-family: var(--font-minecraft);
+    font-size: 38px;
+    border: none;
+    background: transparent;
+    color: var(--black);
+}
+
+#button-container-homepage:hover {
+    transform: scale(1.08);
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
