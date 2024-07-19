@@ -16,16 +16,17 @@
 
 #pseudo{
     font-family: var(--font-titles);
+    font-size: 24px;
     height: 74px;
     border: 2px solid #F9CA58;
     border-radius: 5px;
-    background: var(--background-input)
+    background: var(--background-input);
+    padding-left: 10px;
 }
 
 #pseudo::placeholder{
     color: var(--black);
     font-size: 24px;
-    padding-left: 10px;
 }
 
 #avatar{
@@ -37,7 +38,7 @@
     font-size: 24px;
 }
 
-#plateform{
+#platform{
     font-family: var(--font-titles);
     height: 74px;
     border: 2px solid #F9CA58;
@@ -80,6 +81,8 @@
     text-decoration: none;
     font-family: var(--font-minecraft);
     font-size: 38px;
+    border: none;
+    background: transparent;
     color: var(--black);
 }
 

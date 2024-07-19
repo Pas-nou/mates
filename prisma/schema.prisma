@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int           @id @default(autoincrement())
+  pseudo    String        @unique
+  avatarId  Int?
+  avatar    Avatar?       @relation(fields: [avatarId], references: [id])
+  games     User_Game[]
+  platforms User_Platform[]
+}
+
+model Game {
+  id         Int        @id @default(autoincrement())
+  name       String     @db.VarChar(150)
+  categorie  String     @db.VarChar(150)
+  users      User_Game[]
+}
+
+model Platform {
+  id        Int            @id @default(autoincrement())
+  name      String         @db.VarChar(150)
+  users     User_Platform[]
+}
+
+model Avatar {
+  id        Int     @id @default(autoincrement())
+  name      String
+  url       String
+  users     User[]
+}
+
+model User_Game {
+  userId    Int
+  gameId    Int
+  user      User      @relation(fields: [userId], references: [id])
+  game      Game      @relation(fields: [gameId], references: [id])
+
+  @@id([userId, gameId])
+}
+
+model User_Platform {
+  userId        Int
+  platformId    Int
+  user          User      @relation(fields: [userId], references: [id])
+  platform      Platform  @relation(fields: [platformId], references: [id])
+
+  @@id([userId, platformId])
+}

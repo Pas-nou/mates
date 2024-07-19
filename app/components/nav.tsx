@@ -8,7 +8,7 @@ export default function Nav() {
         <nav id='navigation'>
             <ul>
                 <li id="nav-home">
-                    <Link href="/configuration" >
+                    <Link href="/" >
                         <Image
                             src='/nav-icones/icone_home.png'
                             width={50}
@@ -39,7 +39,7 @@ export default function Nav() {
                     </Link>
                 </li>
                 <li id="nav-profil">
-                    <Link href="/profil" >
+                    <Link href="/user" >
                         <Image
                             src='/nav-icones/icone_profil.png'
                             width={50}
