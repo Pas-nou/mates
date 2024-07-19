@@ -111,7 +111,7 @@ export default async function User() {
         <select
           id="categorie"
           name="categorie">
-          <option value="">Tes categories preferees?</option>
+          <option value="">Ta categorie preferee?</option>
           {games.map((game: { id: number, categorie: string }) => (
             <option key={game.id} value={game.id}>{game.categorie}</option>
           ))}
@@ -120,7 +120,7 @@ export default async function User() {
         <select
           id="game"
           name="game">
-          <option value="">Tes jeux preferes?</option>
+          <option value="">Ton jeu prefere?</option>
           {games.map((game: { id: number, name: string }) => (
             <option key={game.id} value={game.id}>{game.name}</option>
           ))}

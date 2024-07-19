@@ -66,8 +66,8 @@ export default async function Boom() {
           alt="Avatar de l'utilisateur"
           id="avatar-boom"
         />
-        <p id="text-boom">L&apos;application n'étant pas fonctionnelle (du moins pour le moment), saches que tu as perdu 5 minutes de ta vie</p>
-        <p id="text-boom">Rassures toi, tu n'es pas tout seul, les personnes ci-dessous sont comme toi : </p>
+        <p id="text-boom">L&apos;application n&apos;étant pas fonctionnelle (du moins pour le moment), sache que tu as perdu 5 minutes de ta vie</p>
+        <p id="text-boom">Rassure-toi, tu n&apos;es pas tout seul, les personnes ci-dessous sont comme toi :</p>
         <section id="list-boom-container">
           <ul id="list-boom">
             {users.map((user: User) => (

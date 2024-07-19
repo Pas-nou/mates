@@ -19,12 +19,12 @@ export default function Faq() {
         </header>
 
         <article id="article-faq">
-          <h2 id="article-title">Pourquoi l'application Mates ne fonctionne-t-elle pas ?</h2>
-          <p id="article-text">Ah, la fameuse question ! En ce moment, Mates est en train de prendre un petit somme bien merite apres avoir eu un petit coup de fatigue. Nous avons aussi entendu dire qu&apos;il s&apos;essaie à la meditation zen avant de revenir en pleine forme. Soyez patients, et n&apos;oubliez pas de lui envoyer de bonnes ondes !</p>
+          <h2 id="article-title">Pourquoi l&apos;application Mates ne fonctionne-t-elle pas ?</h2>
+          <p id="article-text">Ah, la fameuse question ! En ce moment, Mates est en train de prendre un petit somme bien mérité après avoir eu un petit coup de fatigue. Nous avons aussi entendu dire qu&apos;il s&apos;essaie à la méditation zen avant de revenir en pleine forme. Soyez patients, et n&apos;oubliez pas de lui envoyer de bonnes ondes !</p>
         </article>
         <article id="article-faq">
           <h2 id="article-title">Puis-je toujours trouver des joueurs même si l&apos;application ne marche pas ?</h2>
-          <p id="article-text">Malheureusement, même les meilleurs joueurs ne peuvent pas faire apparaître des partenaires de jeu avec un simple coup de baguette magique… ou avec un bouton 'Matchmacking'. En attendant que Mates se reveille, nous vous conseillons d&apos;essayer la methode antique : les rencontres en face-à-face et les invitations pour une partie de jeu de societe ! 😉</p>
+          <p id="article-text">Malheureusement, même les meilleurs joueurs ne peuvent pas faire apparaître des partenaires de jeu avec un simple coup de baguette magique… ou avec un bouton &apos;Matchmaking&apos;. En attendant que Mates se réveille, nous vous conseillons d&apos;essayer la méthode antique : les rencontres en face-à-face et les invitations pour une partie de jeu de société ! 😉</p>
         </article>
         <article id="article-faq">
           <h2 id="article-title">Que dois-je faire si je rencontre un bug en utilisant Mates ?</h2>
