@@ -33,7 +33,7 @@ class AudioPlayer extends React.Component {
     return (
       <div id='audioplayerdeouf'>
         <audio ref={this.audioRef} src="/music/boule_noire.mp3" controls>
-          Votre navigateur ne supporte pas l'élément <code>audio</code>.
+          Votre navigateur ne supporte pas l&apos;élément <code>audio</code>.
         </audio>
         <button onClick={this.handlePlayButton}>Play Music</button>
       </div>

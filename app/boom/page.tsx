@@ -58,7 +58,7 @@ export default async function Boom() {
         <h1 id="title-boom">Bienvenue {lastUser.pseudo}</h1>
       </header>
       <section id="troll-content">
-        <p id="text-boom">Tu ne l'avais pas vu, mais voilà l'avatar que tu as choisi : </p>
+        <p id="text-boom">Tu ne l&apos;avais pas vu, mais voilà l&apos;avatar que tu as choisi : </p>
         <Image
           src={`/${avatarUser.url}`}
           width={150}
@@ -66,7 +66,7 @@ export default async function Boom() {
           alt="Avatar de l'utilisateur"
           id="avatar-boom"
         />
-        <p id="text-boom">L'application n'étant pas fonctionnelle (du moins pour le moment), saches que tu as perdu 5 minutes de ta vie</p>
+        <p id="text-boom">L&apos;application n'étant pas fonctionnelle (du moins pour le moment), saches que tu as perdu 5 minutes de ta vie</p>
         <p id="text-boom">Rassures toi, tu n'es pas tout seul, les personnes ci-dessous sont comme toi : </p>
         <section id="list-boom-container">
           <ul id="list-boom">
