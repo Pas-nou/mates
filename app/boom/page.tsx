@@ -18,13 +18,6 @@ interface Avatar {
   url: string,
 }
 
-interface BoomProps {
-  user: {
-    id: number,
-    pseudo: string,
-  };
-}
-
 // * Récupération des users
 
 const getUser = async () => {
@@ -45,7 +38,7 @@ const getAvatar = async () => {
   return res.json();
 };
 
-export default async function Boom({ user }: BoomProps) {
+export default async function Boom() {
 
   const users = await getUser();
   const avatars = await getAvatar();
