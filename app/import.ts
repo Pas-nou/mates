@@ -4,16 +4,16 @@ const prisma = new PrismaClient();
 
 async function main() {
     const avatars = [
-        { name: 'Avatar tout mignon 1', url: '../public/avatars/avatar(1).jpg' },
-        { name: 'Avatar tout mignon 2', url: '../public/avatars/avatar(2).jpg' },
-        { name: 'Avatar tout mignon 3', url: '../public/avatars/avatar(3).jpg' },
-        { name: 'Avatar tout mignon 4', url: '../public/avatars/avatar(4).jpg' },
-        { name: 'Avatar tout mignon 5', url: '../public/avatars/avatar(5).jpg' },
-        { name: 'Avatar tout mignon 6', url: '../public/avatars/avatar(6).jpg' },
-        { name: 'Avatar tout mignon 7', url: '../public/avatars/avatar(7).jpg' },
-        { name: 'Avatar tout mignon 8', url: '../public/avatars/avatar(8).jpg' },
-        { name: 'Avatar tout mignon 9', url: '../public/avatars/avatar(9).jpg' },
-        {name: 'Avatar tout mignon 10', url: '../public/avatars/avatar(10).jpg' },
+        { name: 'Avatar tout mignon 1', url: 'avatars/avatar(1).jpg' },
+        { name: 'Avatar tout mignon 2', url: 'avatars/avatar(2).jpg' },
+        { name: 'Avatar tout mignon 3', url: 'avatars/avatar(3).jpg' },
+        { name: 'Avatar tout mignon 4', url: 'avatars/avatar(4).jpg' },
+        { name: 'Avatar tout mignon 5', url: 'avatars/avatar(5).jpg' },
+        { name: 'Avatar tout mignon 6', url: 'avatars/avatar(6).jpg' },
+        { name: 'Avatar tout mignon 7', url: 'avatars/avatar(7).jpg' },
+        { name: 'Avatar tout mignon 8', url: 'avatars/avatar(8).jpg' },
+        { name: 'Avatar tout mignon 9', url: 'avatars/avatar(9).jpg' },
+        {name: 'Avatar tout mignon 10', url: 'avatars/avatar(10).jpg' },
     ];
 
     const platforms = [

@@ -1,13 +1,11 @@
 import { redirect } from 'next/navigation';
-
 import Image from "next/image";
-
 import './config.css'
 
 // * Récupération des avatars
 
 const getAvatar = async () => {
-  const res = await fetch(`http://localhost:3000/api/avatar`);
+  const res = await fetch(`http://localhost:3000/api/avatar`, { cache: "no-store" });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -17,10 +15,20 @@ const getAvatar = async () => {
 // * Récupération des jeux/catégories
 
 const getGames = async () => {
-  const res = await fetch(`http://localhost:3000/api/game`);
+  const res = await fetch(`http://localhost:3000/api/game`, { cache: "no-store" });
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
+  return res.json();
+};
+
+// * Récupération des plateformes
+
+const getPlatform = async () => {
+  const res = await fetch(`http://localhost:3000/api/platform`, { cache: "no-store" });
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }  
   return res.json();
 };
 
@@ -30,7 +38,10 @@ async function onSubmit(formData: FormData) {
   "use server";
 
   const rawFormData = {
-    name: formData.get("pseudo"),
+    pseudo: formData.get("pseudo"),
+    avatarId: formData.get("avatar"),
+    platformId: formData.get("platform"),
+    gameId: formData.get("game"),
   };
 
   const result = await fetch("http://localhost:3000/api/user", {
@@ -41,20 +52,27 @@ async function onSubmit(formData: FormData) {
     body: JSON.stringify(rawFormData),
   });
 
-  if (result.status === 400) {
-    redirect("/");
+  // if (result.status === 200) {
+  //   redirect("/match");
+  // }
+  // * TEST d'autre chose
+  if (result.status === 200) {
+    redirect("/boom");
   }
 }
 
-export default async function Configuration() {
-
+export default async function User() {
   // * récupération des avatars.
-
+  const platforms = await getPlatform();
+  
   const avatars = await getAvatar();
 
   // * Récupération des jeux
-
+  
   const games = await getGames();
+  
+  // * Récupération des plateformes
+  
 
   return (
     <main id="configuration-page">
@@ -66,58 +84,55 @@ export default async function Configuration() {
       />
       <form 
       id="input-container"
-      action={onSubmit}>
-        <label htmlFor="pseudo"></label>
+      action={onSubmit}
+      >
+        <label htmlFor="pseudo"/>
         <input
           id="pseudo"
           name="pseudo"
           type="text"
           placeholder="Quel est ton pseudo?" />
-        <label htmlFor="avatar"></label>
+        <label htmlFor="avatar"/>
         <select
           id="avatar"
-          name="avatar">
+          name="avatar"
+          >
           <option value="">Choisis ton avatar</option>
-          {avatars.map((avatar: {id: number, name: string}) => (
-            <option key={avatar.id} value={avatar.name}>{avatar.name}</option>
+          {avatars.map((avatar: {id: number, name: string, url: string}) => (
+            <option key={avatar.id} value={avatar.id}>{avatar.name}</option>
           )) }
         </select>
-        <label htmlFor="plateform"></label>
+        <label htmlFor="platform"/>
         <select
-          id="plateform"
-          name="plateform">
+          id="platform"
+          name="platform">
           <option value="">Sur quelle plateforme tu joues?</option>
-          <option value="PC">PC</option>
-          <option value="PlayStation 5">PlayStation 5</option>
-          <option value="Xbox One">Xbox One</option>
-          <option value="PlayStation 4">PlayStation 4</option>
-          <option value="Xbox Series S/X">Xbox Series S/X</option>
-          <option value="Nintendo Switch">Nintendo Switch</option>
-          <option value="iOS">iOS</option>
-          <option value="Android">Android</option>
+          {platforms.map((platform: {id: number, name: string}) => (
+            <option key={platform.id} value={platform.id}>{platform.name}</option>
+          )) }
         </select>
-        <label htmlFor="categorie"></label>
+        <label htmlFor="categorie"/>
         <select
           id="categorie"
           name="categorie">
           <option value="">Tes categories preferees?</option>
           {games.map((game: {id: number, categorie: string}) => (
-            <option key={game.id} value={game.categorie}>{game.categorie}</option>
+            <option key={game.id} value={game.id}>{game.categorie}</option>
           )) }
         </select>
-        <label htmlFor="game"></label>
+        <label htmlFor="game"/>
         <select
           id="game"
           name="game">
           <option value="">Tes jeux preferes?</option>
           {games.map((game: {id: number, name: string}) => (
-            <option key={game.id} value={game.name}>{game.name}</option>
+            <option key={game.id} value={game.id}>{game.name}</option>
           )) }
         </select>
-      </form>
       <div id="button-container-homepage">
-        <a type='submit' href="/configuration" id='button-homepage'>Matchmaking</a>
+        <button type='submit' id='button-homepage'>Matchmaking</button>
       </div>
+      </form>
     </main>
   );
 }

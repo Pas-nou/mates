@@ -20,7 +20,7 @@ export default function Home() {
         </p>
       </div>
       <div id="button-container-homepage">
-        <a href="/configuration" id='button-homepage'>Start</a>
+        <a href="/user" id='button-homepage'>Start</a>
       </div>
     </main>
   );
